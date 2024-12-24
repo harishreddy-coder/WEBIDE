@@ -49,7 +49,7 @@ namespace opensap.PurchaseOrder;
 	define view ItemView as
         select from Items
         {
-            POHeader.PURCHASEORDERID,
+          key  POHeader.PURCHASEORDERID,
             POHeader.PARTNER,
             PRODUCT,
             CURRENCY,
