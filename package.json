@@ -23,11 +23,14 @@
   },
   "cds": {
     "requires": {
-      "auth": "mocked",
+      "auth": "xsuaa",
       "connectivity": true,
       "destinations": true,
       "[production]": {
         "db": "hana",
+        "auth": "xsuaa"
+      },
+      "[hybrid]": {
         "auth": "xsuaa"
       }
     },

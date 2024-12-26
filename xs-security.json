@@ -1,100 +1,26 @@
 {
   "xsappname": "WEBIDE",
-  "tenant-mode": "shared",
+  "tenant-mode": "dedicated",
   "scopes": [
     {
-      "name": "$XSAPPNAME.Display",
-      "description": "display"
-    },
-    {
-      "name": "$XSAPPNAME.Create",
-      "description": "create"
-    },
-    {
-      "name": "$XSAPPNAME.Edit",
-      "description": "edit"
-    },
-    {
-      "name": "$XSAPPNAME.Delete",
-      "description": "delete"
-    },
-    {
       "name": "$XSAPPNAME.Admin",
-      "description": "admin"
-    },
-    {
-      "name": "xs_authorization.read",
-      "description": "Read authorization information from UAA"
-    },
-    {
-      "name": "xs_authorization.write",
-      "description": "Write authorization information to UAA"
+      "description": "Admin"
     }
   ],
-  "attributes": [
-    {
-      "name": "client",
-      "description": "Session Client",
-      "valueType": "int"
-    },
-    {
-      "name": "country",
-      "description": "country",
-      "valueType": "s"
-    }
-  ],
+  "attributes": [],
   "role-templates": [
     {
-      "name": "Token_Exchange",
-      "description": "UAA",
-      "scope-references": [
-        "uaa.user"
-      ]
-    },
-    {
-      "name": "Viewer",
-      "description": "View all records",
-      "scope-references": [
-        "$XSAPPNAME.Display"
-      ],
-      "attribute-references": [
-        "client",
-        "country"
-      ]
-    },
-    {
-      "name": "Editor",
-      "description": "Edit and Delete records",
-      "scope-references": [
-        "$XSAPPNAME.Create",
-        "$XSAPPNAME.Edit",
-        "$XSAPPNAME.Delete",
-        "$XSAPPNAME.Display"
-      ],
-      "attribute-references": [
-        "client"
-      ]
-    },
-    {
       "name": "Admin",
-      "description": "Application Admin",
+      "description": "generated",
       "scope-references": [
-        "$XSAPPNAME.Create",
-        "$XSAPPNAME.Edit",
-        "$XSAPPNAME.Delete",
-        "$XSAPPNAME.Display",
         "$XSAPPNAME.Admin"
       ],
-      "attribute-references": [
-        "client"
-      ]
+      "attribute-references": []
     }
   ],
   "oauth2-configuration": {
     "redirect-uris": [
-      "http://localhost:5000",
-      "http://localhost:5000/login/callback",
-      "https://*applicationstudio.cloud.sap/login/callback"
+      "https://port4004-workspaces-ws-fm5p6.us10.trial.applicationstudio.cloud.sap/interaction_items/"
     ]
   }
 }
